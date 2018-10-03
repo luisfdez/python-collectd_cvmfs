@@ -1,0 +1,9 @@
+policy_module(collectd_cvmfs 1.0);
+
+gen_require(`
+    type collectd_t;
+    type fusefs_t;
+    class dir { read };
+')
+
+allow collectd_t fusefs_t:dir { read };
